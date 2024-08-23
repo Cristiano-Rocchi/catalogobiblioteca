@@ -19,4 +19,11 @@ public class LibriDAO extends CatalogoBibliotecaDAO {
         query.setParameter("annoPubblicazione", annoPubblicazione);
         return query.getResultList();
     }
+
+    //  cercare per titolo o in parte
+    public List<Libri> getLibriByTitolo(String titolo) {
+        TypedQuery<Libri> query = getEntityManager().createQuery("SELECT l FROM Libri l WHERE l.titolo LIKE :titolo", Libri.class);
+        query.setParameter("titolo", "%" + titolo + "%");
+        return query.getResultList();
+    }
 }
