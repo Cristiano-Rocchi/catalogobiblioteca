@@ -28,6 +28,10 @@ public abstract class CatalogoBiblioteca {
         this.numeroPagine = numeroPagine;
     }
 
+    public CatalogoBiblioteca() {
+
+    }
+
     public Long getId() {
         return id;
     }
