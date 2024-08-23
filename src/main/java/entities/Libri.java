@@ -17,12 +17,12 @@ public class Libri extends CatalogoBiblioteca {
     private String isbn;
     private LocalDate annoPubblicazione;
 
-    // Costruttore predefinito
+
     public Libri() {
         super();
     }
 
-    // Costruttore con argomenti
+
     public Libri(Long id, String titolo, LocalDate annoPubblicazione, int numeroPagine, String autore, String genere, String isbn) {
         super(id, titolo, annoPubblicazione, numeroPagine);
         this.autore = autore;
@@ -31,7 +31,7 @@ public class Libri extends CatalogoBiblioteca {
         this.annoPubblicazione = annoPubblicazione;
     }
 
-    // Getters e setters
+
     public String getAutore() {
         return autore;
     }
