@@ -23,7 +23,13 @@ public class Riviste extends CatalogoBiblioteca {
         this.tipoEvento = tipoEvento;
     }
 
+    public Periodicita getTipoEvento() {
+        return tipoEvento;
+    }
 
+    public void setTipoEvento(Periodicita tipoEvento) {
+        this.tipoEvento = tipoEvento;
+    }
 }
 
 

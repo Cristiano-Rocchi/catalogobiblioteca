@@ -40,20 +40,20 @@ public abstract class CatalogoBiblioteca {
         this.id = id;
     }
 
-    public int getNumeroPagine() {
-        return numeroPagine;
-    }
-
-    public void setNumeroPagine(int numeroPagine) {
-        this.numeroPagine = numeroPagine;
-    }
-
     public LocalDate getAnnoPubblicazione() {
         return annoPubblicazione;
     }
 
     public void setAnnoPubblicazione(LocalDate annoPubblicazione) {
         this.annoPubblicazione = annoPubblicazione;
+    }
+
+    public int getNumeroPagine() {
+        return numeroPagine;
+    }
+
+    public void setNumeroPagine(int numeroPagine) {
+        this.numeroPagine = numeroPagine;
     }
 
     public String getTitolo() {

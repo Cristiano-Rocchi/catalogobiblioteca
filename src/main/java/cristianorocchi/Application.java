@@ -11,10 +11,10 @@ public class Application {
         LibriDAO libriDAO = new LibriDAO();
 
         try {
-            // Aggiungere 10 libri
+            // Aggiungo 10 libri
             for (int i = 1; i <= 10; i++) {
                 Libri libro = new Libri(
-                        null, //
+                        null,
                         "Titolo Libro " + i,
                         LocalDate.of(2020, 1, 1),
                         100 + i,
@@ -25,11 +25,19 @@ public class Application {
                 libriDAO.addCatalogoBiblioteca(libro);
             }
 
-            // ricera per autore
-            List<Libri> libriTrovati = libriDAO.getLibriByAutore("Autore 1");
-            for (Libri libro : libriTrovati) {
-                System.out.println("Libro trovato: " + libro.getTitolo());
+            // Ricerca per autore
+            List<Libri> libriTrovatiAutore = libriDAO.getLibriByAutore("Autore 1");
+            for (Libri libro : libriTrovatiAutore) {
+                System.out.println("Libro trovato per autore: " + libro.getTitolo());
             }
+
+            // Ricerca per anno
+            LocalDate annoPubblicazione = LocalDate.of(2020, 1, 1);
+            List<Libri> libriTrovatiAnno = libriDAO.getLibriByAnnoPubblicazione(annoPubblicazione);
+            for (Libri libro : libriTrovatiAnno) {
+                System.out.println("Libro trovato per anno di pubblicazione: " + libro.getTitolo());
+            }
+
         } finally {
             libriDAO.close();
         }

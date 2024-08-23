@@ -1,7 +1,6 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -9,31 +8,30 @@ import java.time.LocalDate;
 @Table(name = "libri")
 public class Libri extends CatalogoBiblioteca {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String autore;
     private String genere;
-    private String isbn; // Aggiungi ISBN come proprietà
+    private String isbn;
+    private LocalDate annoPubblicazione;
 
+    // Costruttore predefinito
     public Libri() {
         super();
     }
 
+    // Costruttore con argomenti
     public Libri(Long id, String titolo, LocalDate annoPubblicazione, int numeroPagine, String autore, String genere, String isbn) {
         super(id, titolo, annoPubblicazione, numeroPagine);
         this.autore = autore;
         this.genere = genere;
         this.isbn = isbn;
+        this.annoPubblicazione = annoPubblicazione;
     }
 
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    // Getter e setter per autore e genere
+    // Getters e setters
     public String getAutore() {
         return autore;
     }
@@ -48,5 +46,21 @@ public class Libri extends CatalogoBiblioteca {
 
     public void setGenere(String genere) {
         this.genere = genere;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public LocalDate getAnnoPubblicazione() {
+        return annoPubblicazione;
+    }
+
+    public void setAnnoPubblicazione(LocalDate annoPubblicazione) {
+        this.annoPubblicazione = annoPubblicazione;
     }
 }

@@ -3,7 +3,6 @@ package DAO;
 import entities.CatalogoBiblioteca;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class CatalogoBibliotecaDAO {
@@ -16,26 +15,18 @@ public class CatalogoBibliotecaDAO {
         em = emf.createEntityManager();
     }
 
-    public void addCatalogoBiblioteca(CatalogoBiblioteca catalogo) {
-        EntityTransaction transaction = em.getTransaction();
-        try {
-            transaction.begin();
-            em.persist(catalogo);
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction.isActive()) {
-                transaction.rollback();
-            }
-            throw e;
-        }
-    }
-
     public EntityManager getEntityManager() {
         return em;
     }
 
+    public void addCatalogoBiblioteca(CatalogoBiblioteca catalogo) {
+        em.getTransaction().begin();
+        em.persist(catalogo);
+        em.getTransaction().commit();
+    }
+
     public void close() {
-        em.close();
-        emf.close();
+        if (em != null) em.close();
+        if (emf != null) emf.close();
     }
 }
