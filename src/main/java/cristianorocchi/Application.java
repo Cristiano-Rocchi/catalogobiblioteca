@@ -11,7 +11,7 @@ public class Application {
         LibriDAO libriDAO = new LibriDAO();
 
         try {
-            
+
             for (int i = 1; i <= 10; i++) {
                 Libri libro = new Libri(
                         null,
@@ -38,7 +38,7 @@ public class Application {
                 System.out.println("Libro trovato per anno di pubblicazione: " + libro.getTitolo());
             }
 
-            //
+            
             List<Libri> libriTrovatiTitolo = libriDAO.getLibriByTitolo("Libro 1");
             for (Libri libro : libriTrovatiTitolo) {
                 System.out.println("Libro trovato per titolo: " + libro.getTitolo());
