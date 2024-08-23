@@ -21,5 +21,42 @@ public abstract class CatalogoBiblioteca {
     @Column(name = "numero_pagine")
     private int numeroPagine;
 
-    // Getters e Setters
+    public CatalogoBiblioteca(Long id, String titolo, Date annoPubblicazione, int numeroPagine) {
+        this.id = id;
+        this.titolo = titolo;
+        this.annoPubblicazione = annoPubblicazione;
+        this.numeroPagine = numeroPagine;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getNumeroPagine() {
+        return numeroPagine;
+    }
+
+    public void setNumeroPagine(int numeroPagine) {
+        this.numeroPagine = numeroPagine;
+    }
+
+    public Date getAnnoPubblicazione() {
+        return annoPubblicazione;
+    }
+
+    public void setAnnoPubblicazione(Date annoPubblicazione) {
+        this.annoPubblicazione = annoPubblicazione;
+    }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
 }

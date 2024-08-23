@@ -3,6 +3,8 @@ package entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+import java.util.Date;
+
 
 @Entity
 @Table(name = "libri")
@@ -11,6 +13,25 @@ public class Libri extends CatalogoBiblioteca {
     private String autore;
     private String genere;
 
-    // Getters e Setters
+    public Libri(Long id, String titolo, Date annoPubblicazione, int numeroPagine) {
+        super(id, titolo, annoPubblicazione, numeroPagine);
+    }
+
+
+    public String getAutore() {
+        return autore;
+    }
+
+    public void setAutore(String autore) {
+        this.autore = autore;
+    }
+
+    public String getGenere() {
+        return genere;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
+    }
 }
 

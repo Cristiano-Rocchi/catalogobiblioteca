@@ -26,5 +26,61 @@ public class Utente {
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private List<Prestito> prestiti;
 
-    // Getters e Setters
+
+    public Utente(Long id, String nome, String cognome, Date dataNascita, int numeroDiTessera, List<Prestito> prestiti) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.dataNascita = dataNascita;
+        this.numeroDiTessera = numeroDiTessera;
+        this.prestiti = prestiti;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public Date getDataNascita() {
+        return dataNascita;
+    }
+
+    public void setDataNascita(Date dataNascita) {
+        this.dataNascita = dataNascita;
+    }
+
+    public int getNumeroDiTessera() {
+        return numeroDiTessera;
+    }
+
+    public void setNumeroDiTessera(int numeroDiTessera) {
+        this.numeroDiTessera = numeroDiTessera;
+    }
+
+    public List<Prestito> getPrestiti() {
+        return prestiti;
+    }
+
+    public void setPrestiti(List<Prestito> prestiti) {
+        this.prestiti = prestiti;
+    }
 }
