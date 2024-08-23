@@ -2,7 +2,7 @@ package entities;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "catalogo_biblioteca")
@@ -16,12 +16,12 @@ public abstract class CatalogoBiblioteca {
     private String titolo;
 
     @Column(name = "anno_pubblicazione")
-    private Date annoPubblicazione;
+    private LocalDate annoPubblicazione;
 
     @Column(name = "numero_pagine")
     private int numeroPagine;
 
-    public CatalogoBiblioteca(Long id, String titolo, Date annoPubblicazione, int numeroPagine) {
+    public CatalogoBiblioteca(Long id, String titolo, LocalDate annoPubblicazione, int numeroPagine) {
         this.id = id;
         this.titolo = titolo;
         this.annoPubblicazione = annoPubblicazione;
@@ -44,11 +44,11 @@ public abstract class CatalogoBiblioteca {
         this.numeroPagine = numeroPagine;
     }
 
-    public Date getAnnoPubblicazione() {
+    public LocalDate getAnnoPubblicazione() {
         return annoPubblicazione;
     }
 
-    public void setAnnoPubblicazione(Date annoPubblicazione) {
+    public void setAnnoPubblicazione(LocalDate annoPubblicazione) {
         this.annoPubblicazione = annoPubblicazione;
     }
 

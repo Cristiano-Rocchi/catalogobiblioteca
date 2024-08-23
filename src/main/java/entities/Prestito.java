@@ -2,6 +2,7 @@ package entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,7 +22,7 @@ public class Prestito {
     private CatalogoBiblioteca elementoPrestato;
 
     @Column(name = "data_inizio_prestito")
-    private Date dataInizioPrestito;
+    private LocalDate dataInizioPrestito;
 
     @Column(name = "data_restituzione_prevista")
     private Date dataRestituzionePrevista;
@@ -30,7 +31,7 @@ public class Prestito {
     private Date dataRestituzioneEffettiva;
 
 
-    public Prestito(Long id, Utente utente, CatalogoBiblioteca elementoPrestato, Date dataInizioPrestito, Date dataRestituzionePrevista, Date dataRestituzioneEffettiva) {
+    public Prestito(Long id, Utente utente, CatalogoBiblioteca elementoPrestato, LocalDate dataInizioPrestito, Date dataRestituzionePrevista, Date dataRestituzioneEffettiva) {
         this.id = id;
         this.utente = utente;
         this.elementoPrestato = elementoPrestato;
@@ -63,11 +64,11 @@ public class Prestito {
         this.dataRestituzionePrevista = dataRestituzionePrevista;
     }
 
-    public Date getDataInizioPrestito() {
+    public LocalDate getDataInizioPrestito() {
         return dataInizioPrestito;
     }
 
-    public void setDataInizioPrestito(Date dataInizioPrestito) {
+    public void setDataInizioPrestito(LocalDate dataInizioPrestito) {
         this.dataInizioPrestito = dataInizioPrestito;
     }
 

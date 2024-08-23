@@ -3,7 +3,7 @@ package entities;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -18,7 +18,7 @@ public class Utente {
     private String cognome;
 
     @Column(name = "data_nascita")
-    private Date dataNascita;
+    private LocalDate dataNascita;
 
     @Column(name = "numero_di_tessera")
     private int numeroDiTessera;
@@ -27,7 +27,7 @@ public class Utente {
     private List<Prestito> prestiti;
 
 
-    public Utente(Long id, String nome, String cognome, Date dataNascita, int numeroDiTessera, List<Prestito> prestiti) {
+    public Utente(Long id, String nome, String cognome, LocalDate dataNascita, int numeroDiTessera, List<Prestito> prestiti) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -60,11 +60,11 @@ public class Utente {
         this.cognome = cognome;
     }
 
-    public Date getDataNascita() {
+    public LocalDate getDataNascita() {
         return dataNascita;
     }
 
-    public void setDataNascita(Date dataNascita) {
+    public void setDataNascita(LocalDate dataNascita) {
         this.dataNascita = dataNascita;
     }
 

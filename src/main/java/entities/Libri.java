@@ -3,7 +3,7 @@ package entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 @Entity
@@ -13,7 +13,7 @@ public class Libri extends CatalogoBiblioteca {
     private String autore;
     private String genere;
 
-    public Libri(Long id, String titolo, Date annoPubblicazione, int numeroPagine) {
+    public Libri(Long id, String titolo, LocalDate annoPubblicazione, int numeroPagine) {
         super(id, titolo, annoPubblicazione, numeroPagine);
     }
 
